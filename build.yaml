@@ -1,25 +1,24 @@
 # This file generates the GitHub Actions matrix
-# For simple board + shield combinations, add them
-# to the top level board and shield arrays, for more
-# control, add individual board + shield combinations to
-# the `include` property, e.g:
 #
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
+# Silakka54 (lily58 shield) with an nRF52840 dongle as the central.
+# Left/right halves are demoted to peripherals via cmake-args.
 #
-# Note: Using lily58 shield (which has ZMK Studio physical layout support)
-# The Silakka54 is a 54-key variant, with 4 unused keys mapped to &none
+# The dongle uses the built-in nrf52840dongle_nrf52840 board (Zephyr),
+# which is designed for the Nordic Open DFU Bootloader (app @ 0x1000,
+# correct non-overlapping flash partitions, outputs .bin).
+# Flash via: nrfutil dfu usb-serial (PC) or maga32's Android app.
 #
 ---
 include:
   - board: nice_nano_v2
     shield: lily58_left
-    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano_v2
     shield: lily58_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: nrf52840dongle_nrf52840
+    shield: lily58_dongle
+  - board: nrf52840dongle_nrf52840
+    shield: settings_reset
   - board: nice_nano_v2
     shield: settings_reset
