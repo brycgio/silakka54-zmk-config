@@ -5,10 +5,10 @@
 
 / {
     behaviors {
-        gesc: grave_escape {
+        gesc: tilde_escape {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp GRAVE>;
+            bindings = <&kp ESC>, <&kp TILDE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
