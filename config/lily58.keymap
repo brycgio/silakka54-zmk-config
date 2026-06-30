@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     behaviors {
@@ -97,10 +98,10 @@
 
         layer_2 {
             bindings = <
-&kp F1  &kp F2          &kp F3            &kp F4            &kp F5  &kp F6                    &kp F7    &kp F8         &kp F9        &kp F10    &kp F11     &kp F12
-&trans  &kp C_AC_BACK   &kp C_AC_REFRESH  &kp C_AC_FORWARD  &trans  &trans                    &kp DEL   &kp PAGE_DOWN  &kp PG_UP     &trans     &bt BT_CLR  &trans
-&trans  &kp C_PREVIOUS  &kp C_PLAY        &kp C_NEXT        &trans  &trans                    &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans      &trans
-&trans  &kp C_VOL_DN    &kp C_MUTE        &kp C_VOL_UP      &trans  &trans  &trans    &trans  &trans    &kp HOME       &kp END       &trans     &trans      &trans
+&kp F1  &kp F2          &kp F3            &kp F4            &kp F5  &kp F6                    &kp F7    &kp F8         &kp F9        &kp F10    &kp F11         &kp F12
+&trans  &kp C_AC_BACK   &kp C_AC_REFRESH  &kp C_AC_FORWARD  &trans  &trans                    &kp DEL   &kp PAGE_DOWN  &kp PG_UP     &trans     &bt BT_CLR_ALL  &out OUT_BLE
+&trans  &kp C_PREVIOUS  &kp C_PLAY        &kp C_NEXT        &trans  &trans                    &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans          &out OUT_USB
+&trans  &kp C_VOL_DN    &kp C_MUTE        &kp C_VOL_UP      &trans  &trans  &trans    &trans  &trans    &kp HOME       &kp END       &trans     &trans          &trans
                                           &trans            &trans  &trans  &trans    &trans  &trans    &trans         &trans
             >;
         };
