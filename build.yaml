@@ -18,6 +18,7 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nrf52840dongle_nrf52840
     shield: lily58_dongle
+    snippet: zmk-usb-logging
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
   - board: nice_nano_v2
